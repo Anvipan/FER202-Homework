@@ -5,6 +5,7 @@ import Ex6 from './components/Ex6';
 import Ex7 from './components/Ex7';
 import Ex8 from './components/Ex8';
 import Ex9 from './components/Ex9';
+import Ex10 from './components/Ex10';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <Ex6/> */}
       {/* <Ex7/> */}
       {/* <Ex8/> */}
-      <Ex9/>
+      {/* <Ex9/> */}
+      <Ex10/>
     </div>
   );
 }
