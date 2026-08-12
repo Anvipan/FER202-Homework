@@ -1,22 +1,41 @@
 import React from "react";
-import Container from "react-bootstrap/esm/Container";
+import { Card, Button, Badge } from "react-bootstrap";
 
-export default function ProductCard() {
+export default function ProductCard({ item, onAddToCart }) {
   return (
-    <Container fluid>
-      <div class="card" style={{ width: 18 }}>
-        <img src="images/nam1.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
+    <Card className="h-100 shadow-sm">
+      <Card.Img 
+        variant="top" 
+        src={item.image} 
+        style={{ height: '200px', objectFit: 'cover' }} 
+      />
+      <Card.Body className="d-flex flex-column">
+        <Card.Title>{item.name}</Card.Title>
+        <Card.Text className="text-danger fw-bold fs-5">
+          {item.price.toLocaleString('vi-VN')}đ
+        </Card.Text>
+        <Card.Text>{item.description}</Card.Text>
+
+        <div className="mt-auto">
+          {item.stock > 0 ? (
+            <>
+              <Badge bg="success" className="mb-2">Còn hàng ({item.stock})</Badge>
+              <Button 
+                variant="primary" 
+                className="w-100" 
+                onClick={() => onAddToCart(item.id)}
+              >
+                Add to cart
+              </Button>
+            </>
+          ) : (
+            <>
+              <Badge bg="secondary" className="mb-2">Hết hàng</Badge>
+              <Button variant="secondary" className="w-100" disabled>Out of Stock</Button>
+            </>
+          )}
         </div>
-      </div>
-    </Container>
+      </Card.Body>
+    </Card>
   );
 }

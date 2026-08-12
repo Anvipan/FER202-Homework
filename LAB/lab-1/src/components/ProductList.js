@@ -1,16 +1,19 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import ProductCard from "./ProductCard";
+import { product } from "../data";
 
-export default function ProductList() {
+export default function ProductList({products, onAddToCart}) {
   return (
-    <div className="container-fluid p-0">
-      <div className="bg-light p-4 mb-4">
-        <div className="row g-0 border-bottom border-dark">
-          <div className="col border-end border-dark p-2"> <ProductCard/> </div>
-          <div className="col border-end border-dark p-2">col</div>
-          <div className="col p-2">col</div>
-        </div>
-      </div>
-    </div>
+    <Container className="my-5">
+      <h2 className="text-center mb-4 fw-bold">FEATURED PRODUCTS</h2>
+      <Row className="g-4">
+        {product.map((item, index) => (
+          <Col key={index} xs={12} md={4} lg={3}>
+            <ProductCard item={item} onAddToCart={onAddToCart} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }

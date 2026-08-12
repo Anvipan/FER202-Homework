@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
-export default function Header() {
+export default function Header({cartCount}) {
   return (
     <div className="Navbar">
       <Navbar bg="light" data-bs-theme="light">
@@ -25,7 +25,15 @@ export default function Header() {
             <Nav.Link href="#pricing">Men</Nav.Link>
             <Nav.Link href="#pricing">Women</Nav.Link>
             <Nav.Link href="#pricing">Contact</Nav.Link>
-            <MdOutlineShoppingCart style={{marginTop: 13}}/>
+            <Nav.Link href="#cart" className="position-relative ms-3">
+              <MdOutlineShoppingCart size={20} />
+              <span
+                className="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger"
+                style={{ fontSize: "0.65rem", fontWeight: 500 }}
+              >
+                {cartCount}
+              </span>
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>

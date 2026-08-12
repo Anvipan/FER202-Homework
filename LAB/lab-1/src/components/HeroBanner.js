@@ -1,13 +1,14 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 
+
 export default function HeroBanner() {
   return (
-    <div id="carousel" class="carousel slide">
+    <div id="heroCarousel" class="carousel slide w-1">
       <div class="carousel-indicators">
         <button
           type="button"
-          data-bs-target="#carouselExampleCaptions"
+          data-bs-target="#heroCarousel"
           data-bs-slide-to="0"
           class="active"
           aria-current="true"
@@ -15,13 +16,13 @@ export default function HeroBanner() {
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleCaptions"
+          data-bs-target="#heroCarousel"
           data-bs-slide-to="1"
           aria-label="Slide 2"
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleCaptions"
+          data-bs-target="#heroCarousel"
           data-bs-slide-to="2"
           aria-label="Slide 3"
         ></button>
@@ -35,9 +36,16 @@ export default function HeroBanner() {
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/banner2.jpg" class="d-block w-100" alt="..." />
+          <img src="images/banner2.jpg" class="d-block w-100" alt="banner2" />
           <div class="carousel-caption d-none d-md-block">
             <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/banner3.jpg" class="d-block w-100" alt="banner3" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
             <p>Some representative placeholder content for the second slide.</p>
           </div>
         </div>
@@ -45,7 +53,7 @@ export default function HeroBanner() {
       <button
         class="carousel-control-prev"
         type="button"
-        data-bs-target="#carousel1"
+        data-bs-target="#heroCarousel"
         data-bs-slide="prev"
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -54,7 +62,7 @@ export default function HeroBanner() {
       <button
         class="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleCaptions"
+        data-bs-target="#heroCarousel"
         data-bs-slide="next"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
