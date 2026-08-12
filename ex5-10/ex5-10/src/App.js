@@ -1,12 +1,11 @@
+import logo from './logo.svg';
 import './App.css';
 import Exercise5 from './Ex5';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   return (
     <div className="App">
-      <Exercise5 />
+      <Exercise5/>
     </div>
   );
 }
