@@ -4,7 +4,6 @@ import React from "react";
 import { useReducer } from "react";
 import { initialAttendances } from "./data";
 import { Dropdown } from "bootstrap";
-// sử dụng useReducer để lấy data từ data.js, hiển thị lên bảng ở dưới với các cột STT, Student Name, Class ID, Date, và Status tương ứng
 
 
 
@@ -68,6 +67,7 @@ function App() {
                 <td>{attendance.classId}</td>
                 <td>{attendance.name}</td>
                 <td>{new Date(attendance.date).toLocaleDateString()}</td>
+                
                 <td>
                   <span className={`btn btn-sm ${attendance.status === "PRESENT" ? "btn-success" : "btn-danger"}`}>
                     {attendance.status}
