@@ -67,7 +67,6 @@ function App() {
                 <td>{attendance.classId}</td>
                 <td>{attendance.name}</td>
                 <td>{new Date(attendance.date).toLocaleDateString()}</td>
-                
                 <td>
                   <span className={`btn btn-sm ${attendance.status === "PRESENT" ? "btn-success" : "btn-danger"}`}>
                     {attendance.status}
